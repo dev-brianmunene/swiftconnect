@@ -87,14 +87,8 @@ html {
 
 body {
   position: relative;
-  background-image: linear-gradient(to right, rgba(1, 9, 18, 0.6) 100%, rgba(25, 105, 244, 0.914) 50%),
-  url('../images/bluelorrybg.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: var(--kenya-white);
 }
-
 a {
   color: inherit;
   text-decoration: none;
@@ -137,10 +131,9 @@ button {
 .section {
   padding: var(--section-padding) 0;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  margin: 20px 0;
-  border-radius: var(--radius-lg);
+  background-color: var(--kenya-white);
+  margin: 0;
+  border-radius: 0;
 }
 
 .btn {
@@ -154,6 +147,7 @@ button {
   cursor: pointer;
   text-align: center;
   border: 2px solid transparent;
+  font-size: var(--fs-8);
 }
 
 .btn-primary {
@@ -189,7 +183,8 @@ button {
   border: 1.5px solid var(--my-blue);
   border-radius: 30px;
   color: var(--my-blue);
-  padding: 12px 24px;
+  padding: 15px 24px;
+  margin-top: 100px;
   font-weight: var(--fw-600);
 }
 .btn-outline:hover {
@@ -326,10 +321,12 @@ button {
   font-weight: var(--fw-700);
   color: var(--my-blue);
 }
+
 .logo img {
   height: 70px;
   width: auto;
 }
+
 .navbar {
   display: none;
 }
@@ -377,7 +374,12 @@ button {
 \*-----------------------------------*/
 
 .hero {
-  background: none;
+  background-image: linear-gradient(to right, rgba(1, 9, 18, 0.6) 100%, rgba(25, 105, 244, 0.914) 50%),
+  url('../images/bluelorrybg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--kenya-white);
   padding-top: calc(var(--section-padding) + 114px); /* Account for both navbars */
   min-height: 100vh;
@@ -449,8 +451,7 @@ button {
 \*-----------------------------------*/
 
 .service-card {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: var(--kenya-white);
   padding: 24px 20px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
@@ -463,7 +464,6 @@ button {
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
-  background-color: rgba(255, 255, 255, 1);
 }
 
 .service-icon {
@@ -665,12 +665,11 @@ button {
 \*-----------------------------------*/
 
 .pricing {
-  background-color: rgba(248, 249, 250, 0.95);
+  background-color: var(--light-gray);
 }
 
 .pricing-table {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: var(--kenya-white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   margin-top: 32px;
@@ -764,8 +763,6 @@ button {
   border-radius: 50%;
 }
 
-
-
 /*-----------------------------------*\
   #CONTACT
 \*-----------------------------------*/
@@ -793,8 +790,7 @@ button {
 }
 
 .contact-form {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: var(--kenya-white);
   padding: 32px 24px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
@@ -845,14 +841,12 @@ button {
   margin-top: 16px;
 }
 
-
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
 
 .footer {
-  background-color: rgba(1, 9, 18, 0.95);
-  backdrop-filter: blur(15px);
+  background-color: var(--my-black);
   color: var(--kenya-white);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -937,6 +931,24 @@ button {
   .top-navbar-item {
     font-size: 12px;
   }
+
+  /* Mobile logo fix */
+  .logo img {
+    height: 45px;
+    width: auto;
+  }
+
+  /* Mobile button fix */
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    gap: 4px;
+  }
+
+  .hero-btn-group .btn {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -984,5 +996,99 @@ button {
 
   .footer-container {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/*-----------------------------------*\
+  #RESPONSIVE FIXES
+\*-----------------------------------*/
+
+@media (max-width: 767px) {
+  .top-navbar {
+    display: none;
+  }
+  .header {
+    top: 0;
+    padding: 8px var(--container-padding);
+  }
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255,255,255,0.98);
+    width: 100%;
+    box-shadow: var(--shadow-md);
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .navbar.show {
+    display: flex;
+  }
+  .navbar-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero {
+    padding-top: calc(var(--section-padding) + 70px);
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  .hero-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .section {
+    padding: 40px 0;
+    margin: 0;
+  }
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .profile-image {
+    width: 70px;
+    height: 70px;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .hero-text {
+    font-size: 0.95rem;
+  }
+  .btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+  .service-card {
+    padding: 16px;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+  .section-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  /* Extra small mobile logo */
+  .logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  /* Extra small mobile buttons */
+  .hero-btn-group .btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
   }
 }
