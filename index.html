@@ -281,68 +281,68 @@
 
 
     <!-- BOOKING/TRACKING SECTION -->
-<section id="booking" class="section">
+<section id="booking" class="section quick-actions">
   <div class="container">
     <div class="services-container">
       <span class="section-subtitle"><i class="fas fa-bolt"></i> Quick Actions</span>
       <h2 class="section-title">Book & Track Your Deliveries</h2>
 
-      <div class="grid grid-2" style="margin-top: 48px;">
+      <div class="booking-tracking-container">
         <!-- Booking Card -->
-        <div class="service-card">
+        <div class="booking-form-container">
           <div class="service-icon"><i class="fas fa-clipboard-list"></i></div>
           <h3 class="service-title">Book a Delivery</h3>
           <p class="service-text">Quick booking form for immediate pickup scheduling</p>
 
-          <form class="booking-form">
-            <div class="form-group">
-              <label class="form-label">Pickup Location</label>
-              <input type="text" class="form-input" placeholder="Enter pickup address">
+          <form class="booking-tracking-form">
+            <div class="booking-tracking-group">
+              <label class="booking-tracking-label">Pickup Location</label>
+              <input type="text" class="booking-tracking-input" placeholder="Enter pickup address">
             </div>
-            <div class="form-group">
-              <label class="form-label">Delivery Location</label>
-              <input type="text" class="form-input" placeholder="Enter delivery address">
+            <div class="booking-tracking-group">
+              <label class="booking-tracking-label">Delivery Location</label>
+              <input type="text" class="booking-tracking-input" placeholder="Enter delivery address">
             </div>
             <div class="grid grid-2">
-              <div class="form-group">
-                <label class="form-label">Service Type</label>
-                <select class="form-select">
+              <div class="booking-tracking-group">
+                <label class="booking-tracking-label">Service Type</label>
+                <select class="booking-tracking-select">
                   <option>Standard Delivery</option>
                   <option>Express Delivery</option>
                   <option>Same-Day</option>
                   <option>Cargo Transport</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label class="form-label">Estimated Weight (KG)</label>
-                <input type="number" class="form-input" placeholder="0">
+              <div class="booking-tracking-group">
+                <label class="booking-tracking-label">Estimated Weight (KG)</label>
+                <input type="number" class="booking-tracking-input" placeholder="0">
               </div>
             </div>
-            <button type="submit" class="btn btn-primary full-width">Calculate Price & Book</button>
+            <button type="submit" class="btn btn-primary booking-tracking-button">Calculate Price & Book</button>
           </form>
         </div>
 
         <!-- Tracking Card -->
-        <div class="service-card">
+        <div class="tracking-form-container">
           <div class="service-icon"><i class="fas fa-map-marker-alt"></i></div>
           <h3 class="service-title">Track Your Package</h3>
           <p class="service-text">Real-time tracking with SMS notifications</p>
 
-          <form class="tracking-form">
-            <div class="form-group">
-              <label class="form-label">Tracking Number</label>
-              <input type="text" class="form-input" placeholder="Enter tracking number (e.g., SC240815001)">
+          <form class="booking-tracking-form">
+            <div class="booking-tracking-group">
+              <label class="booking-tracking-label">Tracking Number</label>
+              <input type="text" class="booking-tracking-input" placeholder="Enter tracking number (e.g., SC240815001)">
             </div>
-            <div class="form-group">
-              <label class="form-label">Phone Number (Optional)</label>
-              <input type="tel" class="form-input" placeholder="+254 700 000 000">
+            <div class="booking-tracking-group">
+              <label class="booking-tracking-label">Phone Number (Optional)</label>
+              <input type="tel" class="booking-tracking-input" placeholder="+254 700 000 000">
             </div>
-            <button type="submit" class="btn btn-secondary full-width">Track Package</button>
+            <button type="submit" class="btn btn-secondary booking-tracking-button">Track Package</button>
           </form>
 
           <div class="tracking-result">
-            <h4 class="tracking-title">Sample Tracking Result:</h4>
-            <p class="tracking-text">
+            <h4 class="tracking-result-title">Sample Tracking Result:</h4>
+            <p class="tracking-result-text">
               <i class="fas fa-box"></i> <strong>SC240815001</strong><br>
               Status: In Transit to Mombasa<br>
               Expected: Tomorrow, 2:00 PM
@@ -354,216 +354,82 @@
   </div>
 </section>
 
-
-    <!-- SERVICE AREAS SECTION 
-    <section class="section" style="background-color: var(--light-gray);">
-      <div class="container">
-        <div class="services-container">
-          <span class="section-subtitle">Coverage Area</span>
-          <h2 class="section-title">We Deliver Across All 47 Counties</h2>
-          <p>Comprehensive coverage from major cities to remote rural areas</p>
-          
-          <div class="grid grid-3" style="margin-top: 48px;">
-            <div class="service-card">
-              <h3 style="color: var(--kenya-red); margin-bottom: 16px;">🏙️ Major Cities</h3>
-              <ul class="service-features">
-                <li>Nairobi (Same-day available)</li>
-                <li>Mombasa (Same-day available)</li>
-                <li>Kisumu (Same-day available)</li>
-                <li>Nakuru (Next-day delivery)</li>
-                <li>Eldoret (Next-day delivery)</li>
-                <li>Thika (Same-day available)</li>
-              </ul>
-            </div>
-            
-            <div class="service-card">
-              <h3 style="color: var(--kenya-green); margin-bottom: 16px;">🌍 Regional Hubs</h3>
-              <ul class="service-features">
-                <li>Meru (2-3 days)</li>
-                <li>Nyeri (2-3 days)</li>
-                <li>Kitale (2-3 days)</li>
-                <li>Machakos (1-2 days)</li>
-                <li>Kilifi (2-3 days)</li>
-                <li>Kakamega (2-3 days)</li>
-              </ul>
-            </div>
-            
-            <div class="service-card">
-              <h3 style="color: var(--warm-gold); margin-bottom: 16px;">🏔️ Remote Areas</h3>
-              <ul class="service-features">
-                <li>Northern Counties (3-5 days)</li>
-                <li>Coastal Remote Areas (3-4 days)</li>
-                <li>Mountain Regions (3-5 days)</li>
-                <li>Border Counties (4-6 days)</li>
-                <li>Island Locations (4-7 days)</li>
-                <li>Special Arrangements Available</li>
-              </ul>
-            </div>
-          </div>     
-        </div>
-        </div>
-      </div>
-    </section>
-
-    --->
-
-    <!-- TESTIMONIALS SECTION -->
-<section class="section">
-  <div class="container">
-    <div class="services-container">
-      <span class="section-subtitle">Customer Stories</span>
-      <h2 class="section-title">Trusted by Businesses Across Kenya</h2>
-
-      <div class="grid grid-3" style="margin-top: 48px;">
-        <!-- Testimonial 1 -->
-        <div class="service-card">
-          <p style="font-style: italic; margin-bottom: 24px;">
-            "SwiftConnect has been our logistics backbone for 3 years. Their reliability in delivering to remote areas like Marsabit has been exceptional. Our customers trust us because we trust SwiftConnect."
-          </p>
-          <div class="testimonial-profile">
-            <div class="profile-image">
-              <img src="assets/images/ceof1.jpg" alt="Jane Mwangi">
-            </div>
-            <div>
-              <strong>Jane Mwangi</strong><br>
-              <small>CEO, Afri-Electronics</small>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="service-card">
-          <p style="font-style: italic; margin-bottom: 24px;">
-            "As a Jumia seller, I need fast and affordable delivery. SwiftConnect's same-day service in Nairobi has boosted my customer satisfaction by 40%. Highly recommended!"
-          </p>
-          <div class="testimonial-profile">
-            <div class="profile-image">
-              <img src="assets/images/ceom1.jpg" alt="David Ochieng">
-            </div>
-            <div>
-              <strong>David Ochieng</strong><br>
-              <small>E-commerce Merchant</small>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="service-card">
-          <p style="font-style: italic; margin-bottom: 24px;">
-            "From Mombasa to Lodwar, SwiftConnect delivered our medical supplies safely and on time. Their cold-chain logistics saved our rural health program."
-          </p>
-          <div class="testimonial-profile">
-            <div class="profile-image">
-              <img src="assets/images/ceof2.jpg" alt="Dr. Agnes Mutua">
-            </div>
-            <div>
-              <strong>Dr. Agnes Mutua</strong><br>
-              <small>Health NGO Director</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT SECTION -->
 <section id="contact" class="section">
-  <div class="container">
-    <div class="services-container">
-      <span class="section-subtitle"><i class="fas fa-envelope-open-text"></i> Get In Touch</span>
-      <h2 class="section-title">Ready to Ship? Let's Talk</h2>
-      <p style="text-align: center; margin-bottom: 32px;">Contact our friendly team for personalized logistics solutions</p>
-
-      <div class="grid grid-2">
-        <!-- Contact Info Card -->
-        <div class="service-card contact-info">
-          <h3 style="color: var(--kenya-white); margin-bottom: 16px;"><i class="fas fa-phone-alt"></i> Contact Information</h3>
-
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt contact-icon"></i>
-            <div>
-              <strong>Head Office</strong><br>
-              SwiftConnect Logistics Ltd<br>
-              Westlands, Nairobi<br>
-              P.O. Box 12345-00100<br>
-              Nairobi, Kenya
-            </div>
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle"><i class="fas fa-envelope-open-text"></i> Get In Touch</span>
+            <h2 class="section-title">Ready to Ship? Let's Talk</h2>
+            <p class="section-description">Contact our friendly team for personalized logistics solutions</p>
           </div>
 
-          <div class="contact-item">
-            <i class="fas fa-phone contact-icon"></i>
-            <div>
-              <strong>Phone</strong><br>
-              +254 700 SWIFT (794338)<br>
-              +254 20 123 4567
+          <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="contact-card contact-info">
+              <h3><i class="fas fa-phone-alt"></i> Contact Information</h3>
+              <ul class="contact-list">
+                <li>
+                  <i class="fas fa-map-marker-alt contact-icon"></i>
+                  <div>
+                    <strong>Head Office</strong><br>
+                    SwiftConnect Logistics Ltd<br>
+                    Westlands, Nairobi<br>
+                    P.O. Box 12345-00100<br>
+                    Nairobi, Kenya
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-phone contact-icon"></i>
+                  <div>
+                    <strong>Phone</strong><br>
+                    +254 700 SWIFT (794338)<br>
+                    +254 20 123 4567
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-envelope contact-icon"></i>
+                  <div>
+                    <strong>Email</strong><br>
+                    info@swiftconnect.co.ke<br>
+                    support@swiftconnect.co.ke
+                  </div>
+                </li>
+                <li>
+                  <i class="fas fa-clock contact-icon"></i>
+                  <div>
+                    <strong>Business Hours</strong><br>
+                    Mon–Fri: 7:00 AM – 7:00 PM<br>
+                    Sat: 8:00 AM – 5:00 PM<br>
+                    Sun: 9:00 AM – 3:00 PM
+                  </div>
+                </li>
+              </ul>
             </div>
-          </div>
 
-          <div class="contact-item">
-            <i class="fas fa-envelope contact-icon"></i>
-            <div>
-              <strong>Email</strong><br>
-              info@swiftconnect.co.ke<br>
-              support@swiftconnect.co.ke
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <i class="fas fa-clock contact-icon"></i>
-            <div>
-              <strong>Business Hours</strong><br>
-              Mon–Fri: 7:00 AM – 7:00 PM<br>
-              Sat: 8:00 AM – 5:00 PM<br>
-              Sun: 9:00 AM – 3:00 PM
+            <!-- Contact Form -->
+            <div class="contact-card contact-form">
+              <h3>Send Us a Message</h3>
+              <form>
+                <div class="form-row">
+                  <input type="text" placeholder="Full Name *" required>
+                  <input type="tel" placeholder="Phone Number *" required>
+                </div>
+                <input type="email" placeholder="Email Address *" required>
+                <select required>
+                  <option disabled selected>Service Interest</option>
+                  <option>General Inquiry</option>
+                  <option>Parcel Delivery</option>
+                  <option>Cargo Transport</option>
+                  <option>Warehousing</option>
+                  <option>Corporate Partnership</option>
+                </select>
+                <textarea placeholder="Tell us about your logistics needs..." required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </form>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Contact Form Card -->
-        <div class="service-card contact-form">
-          <h3 style="margin-bottom: 16px;"><i class="fas fa-paper-plane"></i> Send Us a Message</h3>
-
-          <form>
-            <div class="grid grid-2">
-              <div class="form-group">
-                <label class="form-label">Full Name *</label>
-                <input type="text" class="form-input" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Phone Number *</label>
-                <input type="tel" class="form-input" placeholder="+254" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Email Address *</label>
-              <input type="email" class="form-input" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Service Interest</label>
-              <select class="form-select">
-                <option>General Inquiry</option>
-                <option>Parcel Delivery</option>
-                <option>Cargo Transport</option>
-                <option>Warehousing</option>
-                <option>Corporate Partnership</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Message *</label>
-              <textarea class="form-textarea" required placeholder="Tell us about your logistics needs..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary full-width">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
   <!-- FOOTER -->
@@ -571,17 +437,17 @@
     <div class="container">
       <div class="footer-container">
         <div class="footer-section">
-          <h4>SwiftConnect Logistics</h4>
+          <h4 style="color:  #1969f4e9; font-size: 1.5rem; font-family:'Trebuchet MS', sans-serif">SwiftConnect</h4>
           <p>Kenya's most trusted delivery and logistics partner, connecting businesses and individuals across all 47 counties.</p>
           <p><strong>Licensed by:</strong><br>
           Kenya Revenue Authority<br>
           Transport Licensing Board</p>
           
           <div class="social-links">
-            <a href="#" class="social-link">📘</a>
-            <a href="#" class="social-link">🦜</a>
-            <a href="#" class="social-link">📷</a>
-            <a href="#" class="social-link">📱</a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
         
