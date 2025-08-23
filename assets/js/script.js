@@ -714,4 +714,43 @@ document.querySelectorAll('img[data-src]').forEach(img => {
   imageObserver.observe(img);
 });
 
-console.log('SwiftConnect Logistics website loaded successfully! 🚛📦');
+console.log('SwiftConnect Logistics website loaded successfully! 🚛📦')
+;
+<!-- Lazy Loading Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const lazyImages = document.querySelectorAll("[data-src]");
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            const src = img.getAttribute("data-src");
+            
+            // Create a new image to preload
+            const preloadImage = new Image();
+            preloadImage.src = src;
+            
+            preloadImage.onload = () => {
+              img.src = src;
+              img.classList.add("loaded");
+            };
+            
+            img.style.opacity = "0";
+            img.style.transition = "opacity 0.5s ease-in-out";
+            
+            setTimeout(() => {
+              img.style.opacity = "1";
+            }, 100);
+            
+            observer.unobserve(img);
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: "50px",
+        threshold: 0.1
+      });
+      
+      lazyImages.forEach(img => imageObserver.observe(img));
+    });
+  </script>

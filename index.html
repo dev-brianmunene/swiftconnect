@@ -1,5 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+  
+  <!-- Lazy Loading Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const lazyImages = document.querySelectorAll("[data-src]");
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            const src = img.getAttribute("data-src");
+            
+            // Create a new image to preload
+            const preloadImage = new Image();
+            preloadImage.src = src;
+            
+            preloadImage.onload = () => {
+              img.src = src;
+              img.classList.add("loaded");
+            };
+            
+            img.style.opacity = "0";
+            img.style.transition = "opacity 0.5s ease-in-out";
+            
+            setTimeout(() => {
+              img.style.opacity = "1";
+            }, 100);
+            
+            observer.unobserve(img);
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: "50px",
+        threshold: 0.1
+      });
+      
+      lazyImages.forEach(img => imageObserver.observe(img));
+    });
+  </script>
+</head>
+
+<body>
+      <!-- TOP NAVBAR -->
 
 <head>
   <meta charset="UTF-8">
@@ -104,6 +148,7 @@
             
             <div class="grid grid-4 services-grid">
               <div class="service-card">
+                <img class="lazy service-image" data-src="assets/images/parcelblue.jpg" alt="Same-Day Delivery Service" width="100%" height="200">
                 <div class="service-icon"><i class="fas fa-box"></i></div>
                 <h3 class="service-title">Parcel Delivery</h3>
                 <p class="service-text">Reliable door-to-door delivery across Kenya with tracking and notifications.</p>
@@ -117,6 +162,7 @@
               </div>
 
               <div class="service-card">
+                <img class="lazy service-image" data-src="assets/images/cargoblue.jpg" alt="Cargo Transport Services" width="100%" height="200">
                 <div class="service-icon"><i class="fas fa-truck-moving"></i></div>
                 <h3 class="service-title">Cargo Transport</h3>
                 <p class="service-text">Heavy-duty cargo solutions with specialized equipment and bulk pricing.</p>
@@ -130,6 +176,7 @@
               </div>
 
               <div class="service-card">
+                <img class="lazy service-image" data-src="assets/images/warehouse.jpg" alt="Warehousing Solutions" width="100%" height="200">
                 <div class="service-icon"><i class="fas fa-warehouse"></i></div>
                 <h3 class="service-title">Warehousing</h3>
                 <p class="service-text">Secure storage and fulfillment with inventory tracking and flexible plans.</p>
@@ -432,12 +479,17 @@
 
 
 
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/254743410254" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <!-- FOOTER -->
   <footer class="footer section">
     <div class="container">
       <div class="footer-container">
         <div class="footer-section">
-          <h4 style="color:  #1969f4e9; font-size: 1.5rem; font-family:'Trebuchet MS', sans-serif">SwiftConnect</h4>
+          <img src="assets/images/swiftconnect-white.png" alt="SwiftConnect Logo">
           <p>Kenya's most trusted delivery and logistics partner, connecting businesses and individuals across all 47 counties.</p>
           <p><strong>Licensed by:</strong><br>
           Kenya Revenue Authority<br>
@@ -486,9 +538,6 @@
         <p>&copy; 2024 SwiftConnect Logistics Ltd. All rights reserved. | Reg. No: PVT-2018/000123 | VAT Pin: P051234567A</p>
       </div>
     </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="./assets/js/script.js"></script>
+  </footer> 
 </body>
 </html>
