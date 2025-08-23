@@ -69,30 +69,38 @@ window.addEventListener('scroll', function() {
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navbar = document.querySelector('.navbar');
 
-if (mobileMenuBtn) {
-  mobileMenuBtn.addEventListener('click', function() {
-    if (navbar.style.display === 'block') {
-      navbar.style.display = 'none';
-      this.textContent = '☰';
-    } else {
-      navbar.style.display = 'block';
-      this.textContent = '✕';
-    }
+if (mobileMenuBtn && navbar) {
+  mobileMenuBtn.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevent event from bubbling up
+    navbar.classList.toggle('show');
+    this.textContent = navbar.classList.contains('show') ? '✕' : '☰';
+    this.setAttribute('aria-expanded', navbar.classList.contains('show'));
   });
 
   // Close mobile menu when clicking on a link
   document.querySelectorAll('.navbar-link').forEach(link => {
     link.addEventListener('click', function() {
-      navbar.style.display = 'none';
+      navbar.classList.remove('show');
       mobileMenuBtn.textContent = '☰';
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
     });
   });
 
   // Close mobile menu when clicking outside
   document.addEventListener('click', function(e) {
-    if (!navbar.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-      navbar.style.display = 'none';
+    if (navbar.classList.contains('show') && !navbar.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+      navbar.classList.remove('show');
       mobileMenuBtn.textContent = '☰';
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close mobile menu on window resize (if screen becomes large)
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 767 && navbar.classList.contains('show')) {
+      navbar.classList.remove('show');
+      mobileMenuBtn.textContent = '☰';
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
     }
   });
 }
@@ -716,41 +724,3 @@ document.querySelectorAll('img[data-src]').forEach(img => {
 
 console.log('SwiftConnect Logistics website loaded successfully! 🚛📦')
 ;
-<!-- Lazy Loading Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const lazyImages = document.querySelectorAll("[data-src]");
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            const src = img.getAttribute("data-src");
-            
-            // Create a new image to preload
-            const preloadImage = new Image();
-            preloadImage.src = src;
-            
-            preloadImage.onload = () => {
-              img.src = src;
-              img.classList.add("loaded");
-            };
-            
-            img.style.opacity = "0";
-            img.style.transition = "opacity 0.5s ease-in-out";
-            
-            setTimeout(() => {
-              img.style.opacity = "1";
-            }, 100);
-            
-            observer.unobserve(img);
-          }
-        });
-      }, {
-        root: null,
-        rootMargin: "50px",
-        threshold: 0.1
-      });
-      
-      lazyImages.forEach(img => imageObserver.observe(img));
-    });
-  </script>
